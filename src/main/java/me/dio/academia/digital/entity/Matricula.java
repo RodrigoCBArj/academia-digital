@@ -20,7 +20,7 @@ public class Matricula {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @OneToOne(cascade = CascadeType.ALL)
+  @OneToOne(cascade = CascadeType.REFRESH)
   @JoinColumn(name = "aluno_id")
   private Aluno aluno;
 
