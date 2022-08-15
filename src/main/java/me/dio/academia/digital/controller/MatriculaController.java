@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/matriculas")
@@ -34,5 +35,10 @@ public class MatriculaController {
     @DeleteMapping("/deletar/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
+    }
+
+    @GetMapping("/dataDaMatriculaEntre")
+    public List<Matricula> findByDataDaMatriculaBetween(@RequestParam Map<String,String> requestParams) {
+        return service.findByDataDaMatriculaBetween(requestParams);
     }
 }
