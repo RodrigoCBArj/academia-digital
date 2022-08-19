@@ -4,6 +4,7 @@ spring:
     username: ${POSTGRESQL_USER}
     password: ${POSTGRESQL_PASSWORD}
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
       ddl-auto: update
