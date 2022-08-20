@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WelcomeController {
+//  endpoints para teste de autorização
 
     @GetMapping
     public String welcome() {
@@ -13,13 +14,13 @@ public class WelcomeController {
     }
 
     @GetMapping("/users")
-    @PreAuthorize("hasAnyRole('MANAGERS', 'USERS')")
+    @PreAuthorize("hasAnyRole('MANAGER', 'USER')")
     public String users() {
         return "Usuário autorizado!";
     }
 
     @GetMapping("/managers")
-    @PreAuthorize("hasAnyRole('MANAGERS')")
+    @PreAuthorize("hasAnyRole('MANAGER')")
     public String managers() {
         return "Administrador autorizado!";
     }
